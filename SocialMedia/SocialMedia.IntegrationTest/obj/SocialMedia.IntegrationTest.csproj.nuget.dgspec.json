@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia.IntegrationTest\\SocialMedia.IntegrationTest.csproj": {}
+    "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.IntegrationTest\\SocialMedia.IntegrationTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia.IntegrationTest\\SocialMedia.IntegrationTest.csproj": {
+    "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.IntegrationTest\\SocialMedia.IntegrationTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia.IntegrationTest\\SocialMedia.IntegrationTest.csproj",
+        "projectUniqueName": "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.IntegrationTest\\SocialMedia.IntegrationTest.csproj",
         "projectName": "SocialMedia.IntegrationTest",
-        "projectPath": "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia.IntegrationTest\\SocialMedia.IntegrationTest.csproj",
+        "projectPath": "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.IntegrationTest\\SocialMedia.IntegrationTest.csproj",
         "packagesPath": "C:\\Users\\LIF-04\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia.IntegrationTest\\obj\\",
+        "outputPath": "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.IntegrationTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LIF-04\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SocialMedia.Infrastructure.Repositories;
+using SocialMedia_Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +31,10 @@ namespace SocialMediaApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //definiremos nuestras dependencias
+
+            services.AddTransient<IPostRepository,PostRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

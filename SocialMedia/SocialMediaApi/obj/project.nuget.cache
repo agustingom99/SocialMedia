@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bVG6s2+YPrGN9cWdQJt7P6+3a48UonAIYhyxsnnKiuwANHdze0wxCrcAwzesvgOUCiE1I07OyROzSAQPIFMRRg==",
+  "dgSpecHash": "lE1VztvyBqSlxURcul5gu9Ey0BT3bG2rwc/kq4QqG0WKu3DAPup8cpnrtgHbuLI7Ajh98dkAgFGXxdvPveV+jg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMediaApi\\SocialMediaApi.csproj",
+  "projectFilePath": "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMediaApi\\SocialMediaApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LIF-04\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.28\\microsoft.netcore.app.host.win-x64.3.1.28.nupkg.sha512",
     "C:\\Users\\LIF-04\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"

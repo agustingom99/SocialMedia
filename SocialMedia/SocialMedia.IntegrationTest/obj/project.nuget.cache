@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b3+rFp5Rct6YrH1TcPgCRnAJ4wja/xy/8WGNBPUbKfLUq3T/G43zXuryA0rvlg7Xzt7N2KXpZ1k/RxEBH/s7OA==",
+  "dgSpecHash": "Gz79Cl8VtkIZ8uXQtvFvhR5lhIiJyqPpnAnd9jKpQoB9+FvPDs/ys3f/RT3F9TJ3F2WG2XIiKq2a6UsNwvxblg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia.IntegrationTest\\SocialMedia.IntegrationTest.csproj",
+  "projectFilePath": "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.IntegrationTest\\SocialMedia.IntegrationTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LIF-04\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\LIF-04\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
