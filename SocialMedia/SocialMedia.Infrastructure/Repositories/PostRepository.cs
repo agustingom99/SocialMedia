@@ -25,6 +25,14 @@ namespace SocialMedia.Infrastructure.Repositories
             return posts;
         }
 
-     
+        public async Task<Post> GetPost(int id)
+        {
+            var post = await _contex.Posts.FirstOrDefaultAsync(x=> x.PostId == id);
+
+            await Task.Delay(10);
+            return post;
+        }
+
+
     }
 }
