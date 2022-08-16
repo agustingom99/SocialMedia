@@ -17,9 +17,9 @@ namespace SocialMedia.Infrastructure.Repositories
         {
             _contex = contex;
         }
-        public  async Task<IEnumerable<Publicacion>> GetPosts()
+        public  async Task<IEnumerable<Post>> GetPosts()
         {
-            var posts = await _contex.Publicacion.ToListAsync();
+            var posts = await _contex.Posts.ToListAsync();
 
             await Task.Delay(10);
             return posts;
