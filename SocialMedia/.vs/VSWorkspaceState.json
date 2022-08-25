@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SocialMedia Core\\bin",
+    "\\SocialMedia Core\\Entities",
+    "\\SocialMedia Core\\Interfaces",
+    "\\SocialMedia.Infrastructure\\Data",
+    "\\SocialMedia.Infrastructure\\Data\\Configurations",
+    "\\SocialMediaApi\\Controllers"
+  ],
+  "SelectedNode": "\\SocialMedia.sln",
+  "PreviewInSolutionExplorer": false
+}

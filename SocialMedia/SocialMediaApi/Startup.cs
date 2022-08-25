@@ -2,10 +2,14 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SocialMedia.Infrastructure.Data;
+using SocialMedia.Infrastructure.Repositories;
+using SocialMedia_Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +32,19 @@ namespace SocialMediaApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddControllers().AddNewtonsoftJson(option =>
+            {
+                option.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore; // esta linea me quita la referencia circular
+            }
+            
+            );
+
+            //definiremos nuestras dependencias
+
+            services.AddDbContext<SocialMediaContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("SocialMedia")));
+            services.AddTransient<IPostRepository,PostRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

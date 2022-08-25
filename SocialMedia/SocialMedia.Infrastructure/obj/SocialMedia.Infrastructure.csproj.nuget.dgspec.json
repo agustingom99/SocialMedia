@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj": {}
+    "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia Core\\SocialMedia.Core.csproj": {
+    "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia Core\\SocialMedia.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia Core\\SocialMedia.Core.csproj",
+        "projectUniqueName": "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia Core\\SocialMedia.Core.csproj",
         "projectName": "SocialMedia.Core",
-        "projectPath": "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia Core\\SocialMedia.Core.csproj",
+        "projectPath": "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia Core\\SocialMedia.Core.csproj",
         "packagesPath": "C:\\Users\\LIF-04\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia Core\\obj\\",
+        "outputPath": "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LIF-04\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj": {
+    "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj",
         "projectName": "SocialMedia.Infrastructure",
-        "projectPath": "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\LIF-04\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LIF-04\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia Core\\SocialMedia.Core.csproj": {
-                "projectPath": "C:\\Users\\LIF-04\\source\\repos\\RESTFul API with .NET Core 3.1\\SocialMedia\\SocialMedia Core\\SocialMedia.Core.csproj"
+              "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia Core\\SocialMedia.Core.csproj": {
+                "projectPath": "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMedia Core\\SocialMedia.Core.csproj"
               }
             }
           }
@@ -104,6 +104,22 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
