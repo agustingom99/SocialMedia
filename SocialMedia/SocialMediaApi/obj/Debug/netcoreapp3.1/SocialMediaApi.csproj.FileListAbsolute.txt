@@ -84,3 +84,9 @@ C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netco
 C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\obj\Debug\netcoreapp3.1\SocialMediaApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll

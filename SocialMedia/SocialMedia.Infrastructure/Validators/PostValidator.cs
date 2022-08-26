@@ -10,7 +10,9 @@ namespace SocialMedia.Infrastructure.Validators
     {
         public PostValidator()
         {
-            RuleFor(post => post.Description).NotNull().Length(10, 15);// dos validaciones para el campo descripcion
+            RuleFor(post => post.Description)
+                .NotNull().
+                Length(10, 15);// dos validaciones para el campo descripcion
             RuleFor(post => post.Date)
                 .NotNull()
                 .LessThan(DateTime.Now);

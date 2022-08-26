@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -45,12 +46,11 @@ namespace SocialMediaApi
             services.AddDbContext<SocialMediaContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("SocialMedia")));
             services.AddTransient<IPostRepository,PostRepository>();
-
-           /* services.AddMvc().AddFluentValidations(opcions =>
+            
+            services.AddMvc().AddFluentValidation(options =>
             {
-                opcions.RegisterValidatorsFrom
-            })
-           */
+                options.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

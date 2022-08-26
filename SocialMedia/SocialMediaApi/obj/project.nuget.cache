@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "M9eywJ2OLpb5/if7nrhkZm+Dpk86vgA90IwkeGyAdNUWYDgchIYjkdX6FLDiIH3UdE3mm9tx6GXG6r+x+cMlMA==",
+  "dgSpecHash": "umerR94IDRxJNzCSxGdEZE4F+Eu8lLY1sNOjmKAYVawou93GGfRU5Ws0SfX5CfA3YiV9GGmjBCZK2i7yZ09mnA==",
   "success": true,
   "projectFilePath": "C:\\Users\\LIF-04\\Documents\\SocialMedia\\SocialMedia\\SocialMediaApi\\SocialMediaApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LIF-04\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\LIF-04\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\LIF-04\\.nuget\\packages\\fluentvalidation\\11.2.0\\fluentvalidation.11.2.0.nupkg.sha512",
+    "C:\\Users\\LIF-04\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.1\\fluentvalidation.aspnetcore.11.2.1.nupkg.sha512",
+    "C:\\Users\\LIF-04\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.0\\fluentvalidation.dependencyinjectionextensions.11.2.0.nupkg.sha512",
     "C:\\Users\\LIF-04\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\LIF-04\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
     "C:\\Users\\LIF-04\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
