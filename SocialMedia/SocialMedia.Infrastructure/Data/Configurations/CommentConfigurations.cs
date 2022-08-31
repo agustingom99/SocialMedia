@@ -12,9 +12,9 @@ namespace SocialMedia.Infrastructure.Data.Configurations
         {
             builder.ToTable("Comentario");
 
-            builder.HasKey(e => e.CommentId);
+            builder.HasKey(e => e.Id);
 
-            builder.Property(e => e.CommentId).HasColumnName("idComentario")
+            builder.Property(e => e.Id).HasColumnName("idComentario")
             .ValueGeneratedNever();
 
             builder.Property(e => e.PostId).HasColumnName("IdPublicacion");
