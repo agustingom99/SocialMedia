@@ -29,10 +29,9 @@ namespace SocialMedia.Infrastructure.Data.Configurations
                 .HasMaxLength(30)
                 .IsUnicode(false);
 
-            builder.Property(e => e.DateBirth).HasColumnName("Fecha").HasColumnType("date");
+            builder.Property(e => e.DateBirth).HasColumnName("FechaNacimiento").HasColumnType("date");
 
-            builder.Property(e => e.FirstName)
-                .IsRequired()
+            builder.Property(e => e.FirstName).HasColumnName("Nombres")
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
@@ -40,6 +39,8 @@ namespace SocialMedia.Infrastructure.Data.Configurations
                 .HasColumnName("Telefono")
                 .HasMaxLength(10)
                 .IsUnicode(false);
+
+            builder.Property(e => e.IsActive).HasColumnName("Activo");
             
         }
 

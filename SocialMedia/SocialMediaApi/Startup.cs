@@ -46,7 +46,8 @@ namespace SocialMediaApi
             services.AddDbContext<SocialMediaContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("SocialMedia")));
             services.AddTransient<IPostRepository,PostRepository>();
-            
+            services.AddTransient<IPostServices,PostServices>();
+            services.AddTransient<IUserRepository, UserRepository>();
             services.AddMvc().AddFluentValidation(options =>
             {
                 options.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
