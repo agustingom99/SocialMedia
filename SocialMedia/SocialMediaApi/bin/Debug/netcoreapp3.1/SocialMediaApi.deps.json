@@ -1571,6 +1571,9 @@
         }
       },
       "SocialMedia.Core/1.0.0": {
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "1.0.19269.1"
+        },
         "runtime": {
           "SocialMedia.Core.dll": {}
         },

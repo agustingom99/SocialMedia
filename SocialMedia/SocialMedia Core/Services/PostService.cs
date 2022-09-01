@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using SocialMedia.Infrastructure.Repositories;
+using Microsoft.Data.SqlClient;
 
 public class PostServices : IPostServices
 {
@@ -45,9 +46,16 @@ public class PostServices : IPostServices
 
 	public async Task<bool> UpdatePost(Post post)
 	{
-	
-        _UnitOfWork.PostRepository.update(post);
-		await _UnitOfWork.saveChangesAsync();
+		try
+		{
+            _UnitOfWork.PostRepository.update(post);
+            await _UnitOfWork.saveChangesAsync();
+        }
+		catch (Exception e)
+		{
+            throw new Exception("Usuario o post inexistente");
+        }
+       
 		return true;
     }
 }
