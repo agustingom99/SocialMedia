@@ -3,35 +3,36 @@ using SocialMedia_Core.Interfaces;
 using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
+using SocialMedia.Infrastructure.Repositories;
 
 public class PostServices : IPostServices
 {
-	private readonly IPostRepository _postRepository;
-	private readonly IUserRepository _userRepository;
-	public PostServices( IPostRepository postRepository, IUserRepository userRepository)
+	private readonly IUnitOfWork _UnitOfWork;
+
+	public PostServices(IUnitOfWork unitOfWork)
 	{
-		_postRepository = postRepository;
-		_userRepository = userRepository;
+		_UnitOfWork = unitOfWork;
 	}
 
 	public async Task<bool> DeletePost(int id)
 	{
-        return await _postRepository.DeletePost(id);
+        await _UnitOfWork.PostRepository.Delete(id);
+		return true;
     }
 
 	public async Task<Post> GetPost(int id)
 	{
-        return await _postRepository.GetPost(id);
+        return await _UnitOfWork.PostRepository.GetById(id);
     }
 
-	public async Task<IEnumerable<Post>> GetPosts()
+	public IEnumerable<Post> GetPosts()
 	{
-        return await _postRepository.GetPosts();
+        return  _UnitOfWork.PostRepository.GetByAll();
     }
 
 	public async Task InsertPost(Post post)
 	{
-		var user = await _userRepository.GetUser(post.UserId);
+		var user = await _UnitOfWork.UserRepository.GetById(post.UserId);
 		if (user == null)
 		{
 			throw new Exception("user don't exist");
@@ -39,11 +40,14 @@ public class PostServices : IPostServices
 		if (post.Description.Contains("sexo")){
 			throw new Exception("contenido no permitido");
 		}
-		await _postRepository.InsertPost(post);
+		await _UnitOfWork.PostRepository.Add(post);
 	}
 
 	public async Task<bool> UpdatePost(Post post)
 	{
-        return await _postRepository.UpdatePost(post);
+	
+        _UnitOfWork.PostRepository.update(post);
+		await _UnitOfWork.saveChangesAsync();
+		return true;
     }
 }

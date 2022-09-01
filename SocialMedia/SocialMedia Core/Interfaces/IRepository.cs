@@ -9,13 +9,13 @@ namespace SocialMedia.Infrastructure.Repositories
     public interface IRepository<T> where T : BaseEntity
     {
 
-        Task<IEnumerable<T>> GetByAll();
+        IEnumerable<T> GetByAll();
 
-        Task<T> GetById(int id);
+        Task<T> GetById( int id);
 
-        Task<T> Add(int id);
+        Task Add(T entity);
 
-        Task<T> update(int id);
+        void update(T entity);
 
         Task Delete(int id);
 
