@@ -2,11 +2,14 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 using SocialMedia.Infrastructure.Repositories;
 using SocialMedia_Core.DTOs;
 using SocialMedia_Core.Entities;
 using SocialMedia_Core.Interfaces;
+using SocialMedia_Core.QueryFilters.cs;
 using SocialMediaApi.Responses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,12 +29,23 @@ namespace SocialMediaApi.Controllers
             _maper = mapper;
         }
         [HttpGet]
-        public IActionResult GetPost()
+        public IActionResult GetPost([FromQuery] PostQueryFilter filters)
         {
-            var posts =  _postService.GetPosts();
+            var posts =  _postService.GetPosts(filters);
             var postsDto = _maper.Map <IEnumerable<PostDto>>(posts);
             var response = new ApiResponse<IEnumerable<PostDto>>(postsDto);
-            return Ok(postsDto);        
+
+            var metadata = new
+            {
+                posts.TotalCount,
+                posts.PageSize,
+                posts.CurrentPage,
+                posts.TotalPages,
+                posts.HasNextPage,
+                posts.HasPreviousPage
+            };
+            Response.Headers.Add("x-pagination", JsonConvert.SerializeObject(metadata));
+            return Ok(response);        
         }
 
         [HttpGet("{id}")]

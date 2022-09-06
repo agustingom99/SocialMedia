@@ -1,4 +1,6 @@
-﻿using SocialMedia_Core.Entities;
+﻿using SocialMedia_Core.CustomEntities;
+using SocialMedia_Core.Entities;
+using SocialMedia_Core.QueryFilters.cs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,9 +10,11 @@ namespace SocialMedia_Core.Interfaces
 {
     public interface IPostServices
     {
+        PagedList<Post> GetPosts(PostQueryFilter filters);
         Task InsertPost(Post post);
 
-        IEnumerable<Post> GetPosts();
+
+
 
         Task<Post> GetPost(int id);
 

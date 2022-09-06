@@ -5,6 +5,10 @@ using System;
 using System.Collections.Generic;
 using SocialMedia.Infrastructure.Repositories;
 using Microsoft.Data.SqlClient;
+using System.Linq;
+using SocialMedia_Core.Exceptions;
+using SocialMedia_Core.QueryFilters.cs;
+using SocialMedia_Core.CustomEntities;
 
 public class PostServices : IPostServices
 {
@@ -26,20 +30,50 @@ public class PostServices : IPostServices
         return await _UnitOfWork.PostRepository.GetById(id);
     }
 
-	public IEnumerable<Post> GetPosts()
+	public PagedList<Post> GetPosts(PostQueryFilter filters)
 	{
-        return  _UnitOfWork.PostRepository.GetByAll();
+		var posts = _UnitOfWork.PostRepository.GetByAll();
+		if(filters.UserId != null)
+		{
+			posts = posts.Where(x => x.UserId == filters.UserId);
+		}
+		if(filters.Date != null)
+		{
+			posts = posts.Where(x => x.Date.ToString() == filters.Date.ToString());
+		}
+		if(filters.Description != null)
+		{
+			posts = posts.Where(x => x.Description.ToLower().Contains(filters.Description.ToLower()));
+		}
+		var pagedPost = PagedList<Post>.Create(posts, (int)filters.PageNumber,(int)filters.PageSize);
+
+		return pagedPost;
+	
+
     }
 
+	
 	public async Task InsertPost(Post post)
 	{
 		var user = await _UnitOfWork.UserRepository.GetById(post.UserId);
 		if (user == null)
 		{
-			throw new Exception("user don't exist");
+			throw new BussinesExceptions("user don't exist");
+		}
+		var userPost = await _UnitOfWork.PostRepository.GetPostByUser(post.UserId);
+		if (userPost.Count() < 10)
+		{
+			var lastPost = userPost.LastOrDefault();
+			TimeSpan dif = (TimeSpan)(lastPost.Date - DateTime.Now);
+			
+			if ((dif).TotalDays < 7)
+			{
+				throw new BussinesExceptions("you are not able to publicate");
+			}
+			
 		}
 		if (post.Description.Contains("sexo")){
-			throw new Exception("contenido no permitido");
+			throw new BussinesExceptions("contenido no permitido");
 		}
 		await _UnitOfWork.PostRepository.Add(post);
 	}
@@ -51,7 +85,7 @@ public class PostServices : IPostServices
             _UnitOfWork.PostRepository.update(post);
             await _UnitOfWork.saveChangesAsync();
         }
-		catch (Exception e)
+		catch (Exception)
 		{
             throw new Exception("Usuario o post inexistente");
         }
