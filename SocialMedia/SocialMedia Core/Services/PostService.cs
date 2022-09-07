@@ -1,22 +1,23 @@
-﻿using SocialMedia_Core.Entities;
-using SocialMedia_Core.Interfaces;
-using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using SocialMedia.Infrastructure.Repositories;
-using Microsoft.Data.SqlClient;
-using System.Linq;
-using SocialMedia_Core.Exceptions;
-using SocialMedia_Core.QueryFilters.cs;
+﻿using Microsoft.Extensions.Options;
+using SocialMedia.Core.CustomEntities;
 using SocialMedia_Core.CustomEntities;
+using SocialMedia_Core.Entities;
+using SocialMedia_Core.Exceptions;
+using SocialMedia_Core.Interfaces;
+using SocialMedia_Core.QueryFilters.cs;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 public class PostServices : IPostServices
 {
 	private readonly IUnitOfWork _UnitOfWork;
+	private readonly PaginationOptions _paginationOptions;
 
-	public PostServices(IUnitOfWork unitOfWork)
+	public PostServices(IUnitOfWork unitOfWork, IOptions<PaginationOptions> options )
 	{
 		_UnitOfWork = unitOfWork;
+		_paginationOptions = options.Value;
 	}
 
 	public async Task<bool> DeletePost(int id)
@@ -32,6 +33,8 @@ public class PostServices : IPostServices
 
 	public PagedList<Post> GetPosts(PostQueryFilter filters)
 	{
+		filters.PageNumber = filters.PageNumber == null  ? _paginationOptions.DafaultPageNumber : filters.PageNumber;
+		filters.PageSize = filters.PageSize == null  ? _paginationOptions.DefaultPageSize : filters.PageSize;
 		var posts = _UnitOfWork.PostRepository.GetByAll();
 		if(filters.UserId != null)
 		{
@@ -45,7 +48,7 @@ public class PostServices : IPostServices
 		{
 			posts = posts.Where(x => x.Description.ToLower().Contains(filters.Description.ToLower()));
 		}
-		var pagedPost = PagedList<Post>.Create(posts, (int)filters.PageNumber,(int)filters.PageSize);
+		var pagedPost = PagedList<Post>.Create(posts,(int) filters.PageNumber,(int)filters.PageSize);
 
 		return pagedPost;
 	

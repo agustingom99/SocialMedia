@@ -43,6 +43,10 @@
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[1.0.19269.1, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [

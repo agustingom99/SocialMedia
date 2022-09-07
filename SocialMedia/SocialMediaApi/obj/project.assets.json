@@ -2142,7 +2142,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "Microsoft.Data.SqlClient": "1.0.19269.1"
+          "Microsoft.Data.SqlClient": "1.0.19269.1",
+          "Microsoft.Extensions.Options": "6.0.0"
         },
         "compile": {
           "bin/placeholder/SocialMedia.Core.dll": {}
@@ -2160,6 +2161,7 @@
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3",
+          "Microsoft.Extensions.Options": "6.0.0",
           "SocialMedia.Core": "1.0.0"
         },
         "compile": {

@@ -1,21 +1,20 @@
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using SocialMedia.Core.CustomEntities;
 using SocialMedia.Infrastructure.Data;
 using SocialMedia.Infrastructure.Filters;
+using SocialMedia.Infrastructure.Interfaces;
 using SocialMedia.Infrastructure.Repositories;
+using SocialMedia.Infrastructure.Services;
 using SocialMedia_Core.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 // en esta clase se van a registrar servicios y tecnologias que vamos a emplear en nuestro proyecto
 // inyeccion de dependencia y coneccion a la base de datos
@@ -42,9 +41,11 @@ namespace SocialMediaApi
             }).AddNewtonsoftJson(option =>
             {
                 option.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore; // esta linea me quita la referencia circular
+                option.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
             }
-            
+
             );
+            services.Configure<PaginationOptions>(Configuration.GetSection("Pagination"));
 
             //definiremos nuestras dependencias
 
@@ -54,6 +55,14 @@ namespace SocialMediaApi
             services.AddTransient<IPostServices, PostServices>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+            services.AddSingleton<IUriService>(provider =>
+            {
+                var accesor = provider.GetRequiredService<IHttpContextAccessor>();
+                var request = accesor.HttpContext.Request;
+                var absoluteUri = string.Concat(request.Scheme, "://", request.Host.ToUriComponent());
+                return new UriService (absoluteUri);
+            });
+
             services.AddMvc().AddFluentValidation(options =>
             {
                 options.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
