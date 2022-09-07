@@ -90,3 +90,9 @@ C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netco
 C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\SocialMediaApi.xml
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\obj\Debug\netcoreapp3.1\SocialMediaApi.xml

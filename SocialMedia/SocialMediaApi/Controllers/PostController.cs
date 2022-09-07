@@ -14,10 +14,12 @@ using SocialMediaApi.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace SocialMediaApi.Controllers
 {
+    [Produces("application/json")]  
     [Route("api/[controller]")]
     [ApiController]
     
@@ -32,7 +34,14 @@ namespace SocialMediaApi.Controllers
             _maper = mapper;
             _uriService = uriService;
         }
+
+        /// <summary>
+        /// Retorna todo los post del sistema
+        /// </summary>
+        /// <param name="filters">Filtros para la aplicación </param>
+        /// <returns></returns>
         [HttpGet(Name = nameof(GetPost))]
+        [ProducesResponseType((int)HttpStatusCode.OK,Type = typeof(ApiResponse<IEnumerable<PostDto>>))]
         public IActionResult GetPost([FromQuery] PostQueryFilter filters)
         {
             var posts =  _postService.GetPosts(filters);

@@ -14,6 +14,9 @@ using SocialMedia.Infrastructure.Repositories;
 using SocialMedia.Infrastructure.Services;
 using SocialMedia_Core.Interfaces;
 using System;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
+using System.IO;
 
 
 // en esta clase se van a registrar servicios y tecnologias que vamos a emplear en nuestro proyecto
@@ -41,14 +44,21 @@ namespace SocialMediaApi
             }).AddNewtonsoftJson(option =>
             {
                 option.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore; // esta linea me quita la referencia circular
-                option.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+                option.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore; // Si el json es null se ignora
             }
 
             );
             services.Configure<PaginationOptions>(Configuration.GetSection("Pagination"));
 
             //definiremos nuestras dependencias
+            services.AddSwaggerGen(doc =>
+            {
+                doc.SwaggerDoc("V1",new OpenApiInfo {Title = "social Media api",Version = "v1" } );
+                var xmlfile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlfile);
+                doc.IncludeXmlComments(xmlPath);
 
+            });
             services.AddDbContext<SocialMediaContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("SocialMedia")));
 
@@ -79,6 +89,12 @@ namespace SocialMediaApi
 
             app.UseHttpsRedirection();
 
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/V1/swagger.json", "social media API");
+                options.RoutePrefix = String.Empty;
+            });
             app.UseRouting();
 
             app.UseAuthorization();
