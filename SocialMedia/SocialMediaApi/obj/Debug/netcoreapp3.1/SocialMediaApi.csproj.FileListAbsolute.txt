@@ -96,3 +96,10 @@ C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netco
 C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\SocialMediaApi.xml
 C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\obj\Debug\netcoreapp3.1\SocialMediaApi.xml
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\LIF-04\Documents\SocialMedia\SocialMedia\SocialMediaApi\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
